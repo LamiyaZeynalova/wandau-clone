@@ -1,0 +1,16 @@
+@use "./base";
+
+//components
+@use "./components/header";
+@use "./components/footer";
+
+//pages
+@use "./pages/home";
+@use "./pages/about";
+@use "./pages/collections";
+@use "./pages/exhibitions";
+@use "./pages/shop";
+@use "./pages/shopDetails";
+@use "./pages/contact";
+@use "./pages/loading";
+@use "./pages/exhibitionsDetails";

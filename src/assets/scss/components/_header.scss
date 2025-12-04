@@ -1,0 +1,365 @@
+.header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  .container {
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .logo {
+        .logoHome img {
+          width: 220px;
+          height: 65px;
+          max-width: 100%;
+        }
+      }
+      .navBar {
+        .navList {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 45px;
+          gap: 30px;
+          font-size: 18px;
+          a {
+            color: #080808;
+          }
+        }
+      }
+      .headerIcons {
+        display: flex;
+        gap: 28px;
+        font-size: 25px;
+        .searchIcon {
+          margin-top: 8px;
+        }
+        .burgerIcon {
+          font-size: 30px;
+          margin-top: 5px;
+        }
+      }
+      .headerBtn button {
+        border-radius: 22px;
+        font-size: 15px;
+        padding: 12px 24px;
+        font-weight: 600;
+        background-color: #94ffc4;
+        color: #080808;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-left: -30px;
+      }
+      .headerBtn button:hover {
+        background-color: #080808;
+        color: #ffffff;
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+//resbansivlik yazz
+
+@media (max-width: 1024px) {
+  /* Buradakı stillər yalnız ekran 768px və ya daha kiçik olanda işləyəcək */
+  .header {
+    width: 100%;
+    padding: 15px 2px;
+    flex-direction: column;
+    .container {
+      width: 100%;
+      .row {
+        .logo {
+          width: 220px;
+        }
+        .burgerIcon {
+          margin-right: 20px;
+        }
+        .headerBtn {
+          padding: 12px 24px;
+        }
+      }
+    }
+  }
+}
+
+// @media (max-width: 768px) {
+
+// }
+
+@media (max-width: 768px) {
+  /* Əsas navbar gizlədilir, MENU yazısı ilə idarə olunur */
+  .menuWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .menuTitle {
+      font-weight: 600;
+      font-size: 18px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .navBar {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 220px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      margin-top: 8px;
+
+      .navList {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        a {
+          color: #080808;
+          font-size: 16px;
+          text-decoration: none;
+
+          &:hover {
+            color: #94ffc4;
+          }
+        }
+      }
+    }
+
+    .navBar.active {
+      display: flex;
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  /* Burger icon və digərləri öz işini görür */
+  .headerIcons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+// .header {
+//   padding: 30px 60px;
+//   position: relative;
+//   z-index: 1000;
+
+//   .container {
+//     .row {
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
+
+//       .logo {
+//         .logoHome img {
+//           width: 220px;
+//           height: 65px;
+//           max-width: 100%;
+//         }
+//       }
+
+//       .navBar {
+//         .navList {
+//           display: flex;
+//           align-items: center;
+//           justify-content: space-between;
+//           padding: 0 45px;
+//           gap: 30px;
+//           font-size: 18px;
+
+//           a {
+//             color: #080808;
+//             transition: color 0.3s ease;
+
+//             &:hover {
+//               color: #94ffc4;
+//             }
+//           }
+//         }
+//       }
+
+//       .headerIcons {
+//         display: flex;
+//         gap: 28px;
+//         font-size: 25px;
+
+//         .searchIcon {
+//           margin-top: 8px;
+//           cursor: pointer;
+//         }
+
+//         .burgerIcon {
+//           font-size: 30px;
+//           margin-top: 5px;
+//           cursor: pointer;
+//           transition: transform 0.3s ease;
+
+//           &:hover {
+//             transform: scale(1.1);
+//           }
+//         }
+//       }
+
+//       .headerBtn button {
+//         border-radius: 22px;
+//         font-size: 15px;
+//         padding: 12px 24px;
+//         font-weight: 600;
+//         background-color: #94ffc4;
+//         color: #080808;
+//         border: none;
+//         cursor: pointer;
+//         transition: all 0.3s ease;
+//         margin-left: -30px;
+
+//         &:hover {
+//           background-color: #080808;
+//           color: #ffffff;
+//           transform: scale(1.05);
+//         }
+//       }
+//     }
+//   }
+
+//   /* === SLIDE MENU === */
+//   .sideMenu {
+//     position: fixed;
+//     top: 0;
+//     left: -320px;
+//     width: 300px;
+//     height: 100vh;
+//     background-color: #ffffff;
+//     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+//     transition: left 0.4s ease;
+//     z-index: 2000;
+//     display: flex;
+//     flex-direction: column;
+
+//     &.open {
+//       left: 0;
+//     }
+
+//     .sideMenuContent {
+//       padding: 40px 25px;
+//       display: flex;
+//       flex-direction: column;
+//       gap: 25px;
+
+//       .sideMenuHeader {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: flex-start;
+//         gap: 10px;
+
+//         img {
+//           width: 150px;
+//           height: auto;
+//         }
+
+//         h3 {
+//           font-size: 20px;
+//           font-weight: 700;
+//           color: #080808;
+//         }
+//       }
+
+//       .sideMenuList {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 15px;
+
+//         li {
+//           list-style: none;
+
+//           a {
+//             font-size: 17px;
+//             color: #080808;
+//             text-decoration: none;
+//             transition: all 0.3s ease;
+
+//             &:hover {
+//               color: #94ffc4;
+//               margin-left: 5px;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   /* Overlay effekti */
+//   .overlay {
+//     position: fixed;
+//     inset: 0;
+//     background: rgba(0, 0, 0, 0.3);
+//     z-index: 1500;
+//     animation: fadeIn 0.4s ease forwards;
+//   }
+
+//   @keyframes fadeIn {
+//     from {
+//       opacity: 0;
+//     }
+//     to {
+//       opacity: 1;
+//     }
+//   }
+// }
+
+// /* === RESPONSIVE === */
+// @media (max-width: 1024px) {
+//   .header {
+//     // width: 100%;
+//     // padding: 20px 15px;
+
+//     .container {
+//       .row {
+//         .navBar {
+//           // display: none;
+//         }
+
+//         .headerBtn {
+//           // display: none;
+//         }
+
+//         .logo {
+//           // width: 180px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .header {
+//     padding: 15px 10px;
+
+//     .headerIcons {
+//       gap: 18px;
+//     }
+
+//     .logo .logoHome img {
+//       width: 180px;
+//       height: auto;
+//     }
+//   }
+// }
